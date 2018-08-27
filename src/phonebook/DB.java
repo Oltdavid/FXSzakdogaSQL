@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class DB {
 
 	final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-	final String URL = "jdbc:mysql://localhost/telefonkonyv";
+	final String URL = "jdbc:mysql://localhost/telefonkonyv?&characterEncoding=UTF-8";
 	final String USERNAME = "root";
 	final String PASSWORD = "";
 
