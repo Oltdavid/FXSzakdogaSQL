@@ -1,10 +1,10 @@
 ----------------------------------------------------------------
-Mon Aug 27 18:28:09 CEST 2018:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.2 - (1629631): instance a816c00e-0165-7c36-c68b-000006752c10 
+Mon Aug 27 20:14:58 CEST 2018:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0165-7c98-940d-00000678bf18 
 on database directory C:\Netbeans munka\SzakdogaFX\sampleDB with class loader sun.misc.Launcher$AppClassLoader@55f96302 
-Loaded from file:/C:/Netbeans%20munka/SzakdogaFX/dist/run1234900184/lib/derby.jar
+Loaded from file:/C:/Netbeans%20munka/SzakdogaFX/dist/run95996192/lib/derby.jar
 java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_171-b11
+java.runtime.version=1.8.0_181-b13
 user.dir=C:\Netbeans munka\SzakdogaFX
 os.name=Windows 10
 os.arch=amd64
