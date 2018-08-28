@@ -55,9 +55,9 @@ public class DB {
 			if (!rs.next()) {
 				String database_sql = "CREATE TABLE contacts ("
 						+ " `id` INT NOT NULL AUTO_INCREMENT , `lastname` VARCHAR(30) NOT NULL ,"
-						+ " `firstname` VARCHAR(30) NOT NULL ," + " `email` VARCHAR(50) NOT NULL ,"
+						+ " `firstname` VARCHAR(30) NOT NULL ," + " `email` VARCHAR(20) NOT NULL ,"
 						+ " `anyjaneve` VARCHAR(30) NOT NULL ," + " `lakcim` VARCHAR(30) NOT NULL ,"
-						+ " `tajszam` VARCHAR(30) NOT NULL ," + " PRIMARY KEY (`id`)"
+						+ " `tajszam` VARCHAR(10) NOT NULL ," + " PRIMARY KEY (`id`)"
 						+ ") ENGINE = InnoDB CHARSET=utf8 COLLATE utf8_hungarian_ci;";
 
 				createStatement.execute(database_sql);

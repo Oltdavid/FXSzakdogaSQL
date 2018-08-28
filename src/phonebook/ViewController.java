@@ -77,8 +77,8 @@ public class ViewController implements Initializable {
     private void addContact(ActionEvent event) {
         String email = inputEmail.getText();
         if (email.length() > 3 && email.contains("@") && email.contains(".")) {
-            Person newPerson = new Person(inputLastname.getText(), inputFirstName.getText(), 
-                               inputEmail.getText(), inputAnyjaneve.getText(), inputLakcim.getText(), inputTajszam.getText());
+            Person newPerson = new Person(inputLastname.getText(), inputFirstName.getText(),
+                    inputEmail.getText(), inputAnyjaneve.getText(), inputLakcim.getText(), inputTajszam.getText());
             data.add(newPerson);
             db.addContact(newPerson);
             inputLastname.clear();
@@ -122,7 +122,7 @@ public class ViewController implements Initializable {
         );
 
         TableColumn firstNameCol = new TableColumn("Keresztnév");
-        firstNameCol.setMinWidth(130);
+        firstNameCol.setMinWidth(90);
         firstNameCol.setCellFactory(TextFieldTableCell.forTableColumn());
         firstNameCol.setCellValueFactory(new PropertyValueFactory<Person, String>("firstName"));
 
@@ -132,13 +132,15 @@ public class ViewController implements Initializable {
             public void handle(TableColumn.CellEditEvent<Person, String> t) {
                 Person actualPerson = (Person) t.getTableView().getItems().get(t.getTablePosition().getRow());
                 actualPerson.setFirstName(t.getNewValue());
+                data.remove(t);
                 db.updateContact(actualPerson);
+
             }
         }
         );
 
         TableColumn emailCol = new TableColumn("Email cím");
-        emailCol.setMinWidth(250);
+        emailCol.setMinWidth(120);
         emailCol.setCellValueFactory(new PropertyValueFactory<Person, String>("email"));
         emailCol.setCellFactory(TextFieldTableCell.forTableColumn());
 
@@ -168,9 +170,9 @@ public class ViewController implements Initializable {
             }
         }
         );
-        
+
         TableColumn lakcimCol = new TableColumn("Lakcím");
-        lakcimCol.setMinWidth(100);
+        lakcimCol.setMinWidth(150);
         lakcimCol.setCellValueFactory(new PropertyValueFactory<Person, String>("lakcim"));
         lakcimCol.setCellFactory(TextFieldTableCell.forTableColumn());
 
@@ -184,8 +186,8 @@ public class ViewController implements Initializable {
             }
         }
         );
-        
-         TableColumn tajszamCol = new TableColumn("Taj szám");
+
+        TableColumn tajszamCol = new TableColumn("Taj szám");
         tajszamCol.setMinWidth(100);
         tajszamCol.setCellValueFactory(new PropertyValueFactory<Person, String>("tajszam"));
         tajszamCol.setCellFactory(TextFieldTableCell.forTableColumn());
