@@ -13,6 +13,7 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.SplitPane;
 import javafx.scene.control.TableCell;
@@ -49,6 +50,8 @@ public class ViewController implements Initializable {
     TextField inputTajszam;
     @FXML
     TextField inputDate;
+    @FXML
+    ChoiceBox inputStatusz;
     @FXML
     Button addNewContactButton;
     @FXML

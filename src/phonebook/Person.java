@@ -32,7 +32,7 @@ public class Person {
         this.anyjaNeve = new SimpleStringProperty(aNeve);
         this.lakcim = new SimpleStringProperty(lakcim);
         this.tajszam = new SimpleStringProperty(tajszam);
-        this.szido = new SimpleStringProperty(Szido);
+        this.szido = new SimpleStringProperty(Szido);       
         this.id = new SimpleStringProperty("");
     }
     
@@ -95,6 +95,7 @@ public class Person {
     public void setSzido(String Szido) {
         szido.set(Szido);
     }
+  
 
     public String getId(){
         return id.get();
