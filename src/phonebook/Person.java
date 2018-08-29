@@ -1,4 +1,3 @@
-
 package phonebook;
 
 import javafx.beans.property.SimpleStringProperty;
