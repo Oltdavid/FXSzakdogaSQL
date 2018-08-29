@@ -12,6 +12,7 @@ public class Person {
     private final SimpleStringProperty anyjaNeve;
     private final SimpleStringProperty lakcim;
     private final SimpleStringProperty tajszam;
+    private final SimpleStringProperty szido;
     private final SimpleStringProperty id;
     
     public Person() {
@@ -21,26 +22,29 @@ public class Person {
         this.anyjaNeve = new SimpleStringProperty("");
         this.lakcim = new SimpleStringProperty("");
         this.tajszam = new SimpleStringProperty("");
+        this.szido = new SimpleStringProperty("");
         this.id = new SimpleStringProperty("");
     }
  
-    public Person(String lName, String fName, String email,String aNeve, String lakcim, String tajszam ) {
+    public Person(String lName, String fName, String email,String aNeve, String lakcim, String tajszam, String Szido ) {
         this.lastName = new SimpleStringProperty(lName);
         this.firstName = new SimpleStringProperty(fName);
         this.email = new SimpleStringProperty(email);
         this.anyjaNeve = new SimpleStringProperty(aNeve);
         this.lakcim = new SimpleStringProperty(lakcim);
         this.tajszam = new SimpleStringProperty(tajszam);
+        this.szido = new SimpleStringProperty(Szido);
         this.id = new SimpleStringProperty("");
     }
     
-    public Person(Integer id, String lName, String fName, String email,String aNeve, String lakcim, String tajszam ) {
+    public Person(Integer id, String lName, String fName, String email,String aNeve, String lakcim, String tajszam, String Szido ) {
         this.lastName = new SimpleStringProperty(lName);
         this.firstName = new SimpleStringProperty(fName);
         this.email = new SimpleStringProperty(email);
         this.anyjaNeve = new SimpleStringProperty(aNeve);
         this.lakcim = new SimpleStringProperty(lakcim);
         this.tajszam = new SimpleStringProperty(tajszam);
+        this.szido = new SimpleStringProperty(Szido);
         this.id = new SimpleStringProperty(String.valueOf(id));
     }
     
@@ -54,8 +58,8 @@ public class Person {
     public String getLastName() {
         return lastName.get();
     }
-    public void setLastName(String fName) {
-        lastName.set(fName);
+    public void setLastName(String lName) {
+        lastName.set(lName);
     }
     
     public String getEmail() {
@@ -84,6 +88,13 @@ public class Person {
     }
     public void setTajszam(String Tajszam) {
         tajszam.set(Tajszam);
+    }
+    
+    public String getSzido() {
+        return szido.get();
+    }
+    public void setSzido(String Szido) {
+        szido.set(Szido);
     }
 
     public String getId(){
