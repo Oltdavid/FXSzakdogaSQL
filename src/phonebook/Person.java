@@ -12,6 +12,7 @@ public class Person {
     private final SimpleStringProperty lakcim;
     private final SimpleStringProperty tajszam;
     private final SimpleStringProperty szido;
+    private final SimpleStringProperty telefon;
     private final SimpleStringProperty id;
     
     public Person() {
@@ -22,21 +23,23 @@ public class Person {
         this.lakcim = new SimpleStringProperty("");
         this.tajszam = new SimpleStringProperty("");
         this.szido = new SimpleStringProperty("");
+        this.telefon = new SimpleStringProperty("");
         this.id = new SimpleStringProperty("");
     }
  
-    public Person(String lName, String fName, String email,String aNeve, String lakcim, String tajszam, String Szido ) {
+    public Person(String lName, String fName, String email,String aNeve, String lakcim, String tajszam, String Szido, String Telefon ) {
         this.lastName = new SimpleStringProperty(lName);
         this.firstName = new SimpleStringProperty(fName);
         this.email = new SimpleStringProperty(email);
         this.anyjaNeve = new SimpleStringProperty(aNeve);
         this.lakcim = new SimpleStringProperty(lakcim);
         this.tajszam = new SimpleStringProperty(tajszam);
-        this.szido = new SimpleStringProperty(Szido);       
+        this.szido = new SimpleStringProperty(Szido); 
+        this.telefon = new SimpleStringProperty(Telefon);
         this.id = new SimpleStringProperty("");
     }
     
-    public Person(Integer id, String lName, String fName, String email,String aNeve, String lakcim, String tajszam, String Szido ) {
+    public Person(Integer id, String lName, String fName, String email,String aNeve, String lakcim, String tajszam, String Szido, String Telefon ) {
         this.lastName = new SimpleStringProperty(lName);
         this.firstName = new SimpleStringProperty(fName);
         this.email = new SimpleStringProperty(email);
@@ -44,6 +47,7 @@ public class Person {
         this.lakcim = new SimpleStringProperty(lakcim);
         this.tajszam = new SimpleStringProperty(tajszam);
         this.szido = new SimpleStringProperty(Szido);
+        this.telefon = new SimpleStringProperty(Telefon);
         this.id = new SimpleStringProperty(String.valueOf(id));
     }
     
@@ -94,6 +98,13 @@ public class Person {
     }
     public void setSzido(String Szido) {
         szido.set(Szido);
+    }
+    
+    public String getTelefon() {
+        return telefon.get();
+    }
+    public void setTelefon(String Telefon) {
+        telefon.set(Telefon);
     }
   
 

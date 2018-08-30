@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TableView?>
@@ -49,14 +48,14 @@
                             <columns>
                           </columns>
                         </TableView>
-                        <TextField id="inputLastname" fx:id="inputLastname" layoutX="100.0" layoutY="294.0" prefHeight="25.0" prefWidth="175.0" promptText="Kovács" />
+                        <TextField id="inputLastname" fx:id="inputLastname" layoutX="114.0" layoutY="292.0" prefHeight="25.0" prefWidth="175.0" promptText="Kovács" />
                         <TextField id="inputFirstName" fx:id="inputFirstName" layoutX="400.0" layoutY="295.0" prefHeight="25.0" prefWidth="175.0" promptText="Gyula" />
-                        <TextField id="inputAnyjaneve" fx:id="inputAnyjaneve" layoutX="100.0" layoutY="330.0" prefHeight="25.0" prefWidth="175.0" promptText="Anyja neve" />
+                        <TextField id="inputAnyjaneve" fx:id="inputAnyjaneve" layoutX="114.0" layoutY="328.0" prefHeight="25.0" prefWidth="175.0" promptText="Anyja neve" />
                         <TextField id="inputLakcim" fx:id="inputLakcim" layoutX="400.0" layoutY="331.0" prefHeight="25.0" prefWidth="175.0" promptText="Lakcím" />
-                        <TextField id="inputTajszam" fx:id="inputTajszam" layoutX="100.0" layoutY="364.0" prefHeight="25.0" prefWidth="175.0" promptText="Taj szám" />
+                        <TextField id="inputTajszam" fx:id="inputTajszam" layoutX="114.0" layoutY="362.0" prefHeight="25.0" prefWidth="175.0" promptText="Taj szám" />
                         <TextField id="inputEmail" fx:id="inputEmail" layoutX="400.0" layoutY="365.0" prefHeight="25.0" prefWidth="175.0" promptText="test@gmail.com" />
-                        <TextField id="inputDate" fx:id="inputDate" layoutX="100.0" layoutY="398.0" prefHeight="25.0" prefWidth="175.0" promptText="1983-02-12" />
-                        <ChoiceBox id="inputStatusz" fx:id="inputStatusz" layoutX="400.0" layoutY="407.0" prefHeight="22.0" prefWidth="175.0" /> 
+                        <TextField id="inputDate" fx:id="inputDate" layoutX="114.0" layoutY="396.0" prefHeight="25.0" prefWidth="175.0" promptText="1983-02-12" />
+                        <TextField id="inputTelefon" fx:id="inputTelefon" layoutX="400.0" layoutY="398.0" prefHeight="25.0" prefWidth="175.0" promptText="06()???-??-??" />
                         <Label alignment="CENTER_RIGHT" layoutX="20.0" layoutY="299.0" prefHeight="17.0" prefWidth="72.0" text="Vezetéknév:" />
                         <Label alignment="CENTER_RIGHT" layoutX="320.0" layoutY="300.0" prefHeight="17.0" prefWidth="72.0" text="Keresztnév:" />
                         <Label alignment="CENTER_RIGHT" layoutX="320.0" layoutY="370.0" prefHeight="17.0" prefWidth="72.0" text="Email:" />
@@ -64,8 +63,8 @@
                         <Label alignment="CENTER_RIGHT" layoutX="320.0" layoutY="335.0" prefHeight="17.0" prefWidth="72.0" text="Lakcím:" />
                         <Label alignment="CENTER_RIGHT" layoutX="20.0" layoutY="368.0" prefHeight="0.0" prefWidth="72.0" text="Taj szám:" />
                         <Label layoutX="27.0" layoutY="404.0" text="Születési idő:" />
+                        <Label layoutX="351.0" layoutY="404.0" text="Telefon:" />
                         <Button id="addNewContactButton" fx:id="addNewContactButton" layoutX="448.0" layoutY="538.0" mnemonicParsing="false" onAction="#addContact" text="Új kontakt hozzáadása" />
-                        <Label layoutX="301.0" layoutY="411.0" text="Sportoló státusza: " />
                          
                      </children>
                   </Pane>

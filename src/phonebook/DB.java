@@ -56,7 +56,8 @@ public class DB {
 						+ " `id` INT NOT NULL AUTO_INCREMENT , `lastname` VARCHAR(30) NOT NULL ,"
 						+ " `firstname` VARCHAR(30) NOT NULL ," + " `email` VARCHAR(20) NOT NULL ,"
 						+ " `anyjaneve` VARCHAR(30) NOT NULL ," + " `lakcim` VARCHAR(30) NOT NULL ,"
-						+ " `tajszam` VARCHAR(10) NOT NULL ," + " `szido` VARCHAR(10) NOT NULL ," + " PRIMARY KEY (`id`)"
+						+ " `tajszam` VARCHAR(10) NOT NULL ," + " `szido` VARCHAR(10) NOT NULL ," 
+                                                + " `telefon` VARCHAR(15) NOT NULL ," + " PRIMARY KEY (`id`)"
 						+ ") ENGINE = InnoDB CHARSET=utf8 COLLATE utf8_hungarian_ci;";
 
 				createStatement.execute(database_sql);
@@ -78,7 +79,7 @@ public class DB {
 			while (rs.next()) {
 				Person actualPerson = new Person(rs.getInt("id"), rs.getString("lastname"), rs.getString("firstname"),
 						rs.getString("email"), rs.getString("anyjaneve"), rs.getString("lakcim"),
-						rs.getString("tajszam"), rs.getString("szido"));
+						rs.getString("tajszam"), rs.getString("szido"), rs.getString("telefon"));
 				users.add(actualPerson);
 			}
 		} catch (SQLException ex) {
@@ -90,7 +91,7 @@ public class DB {
 
 	public void addContact(Person person) {
 		try {
-			String sql = "insert into contacts (lastname, firstname, email, anyjaneve, lakcim, tajszam, szido) values (?,?,?,?,?,?,?)";
+			String sql = "insert into contacts (lastname, firstname, email, anyjaneve, lakcim, tajszam, szido, telefon) values (?,?,?,?,?,?,?,?)";
 			PreparedStatement preparedStatement = conn.prepareStatement(sql);
 			preparedStatement.setString(1, person.getLastName());
 			preparedStatement.setString(2, person.getFirstName());
@@ -99,6 +100,7 @@ public class DB {
 			preparedStatement.setString(5, person.getLakcim());
 			preparedStatement.setString(6, person.getTajszam());
                         preparedStatement.setString(7, person.getSzido());
+                        preparedStatement.setString(8, person.getTelefon());
 			preparedStatement.execute();
 		} catch (SQLException ex) {
 			System.out.println("Valami baj van a contact hozzáadásakor");
@@ -108,7 +110,7 @@ public class DB {
 
 	public void updateContact(Person person) {
 		try {
-			String sql = "update contacts set lastname = ?, firstname = ? , email = ?, anyjaneve = ?, tajszam = ?, szido = ? where id = ?";
+			String sql = "update contacts set lastname = ?, firstname = ? , email = ?, anyjaneve = ?, tajszam = ?, szido = ?, telefon = ? where id = ?";
 			PreparedStatement preparedStatement = conn.prepareStatement(sql);
 			preparedStatement.setString(1, person.getLastName());
 			preparedStatement.setString(2, person.getFirstName());
@@ -117,7 +119,8 @@ public class DB {
 			preparedStatement.setString(5, person.getLakcim());
 			preparedStatement.setString(6, person.getTajszam());
                         preparedStatement.setString(7, person.getSzido());
-			preparedStatement.setInt(8, Integer.parseInt(person.getId()));
+                        preparedStatement.setString(8, person.getTelefon());
+			preparedStatement.setInt(9, Integer.parseInt(person.getId()));
 			preparedStatement.execute();
 		} catch (SQLException ex) {
 			System.out.println("Valami baj van a contact hozzáadásakor");

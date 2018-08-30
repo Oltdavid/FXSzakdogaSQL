@@ -13,7 +13,6 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.SplitPane;
 import javafx.scene.control.TableCell;
@@ -51,7 +50,7 @@ public class ViewController implements Initializable {
     @FXML
     TextField inputDate;
     @FXML
-    ChoiceBox inputStatusz;
+    TextField inputTelefon;
     @FXML
     Button addNewContactButton;
     @FXML
@@ -85,7 +84,7 @@ public class ViewController implements Initializable {
             Person newPerson = new Person(inputLastname.getText(), inputFirstName.getText(),
                                  inputEmail.getText(), inputAnyjaneve.getText(),
                                  inputLakcim.getText(),inputTajszam.getText(),
-                                 inputDate.getText());
+                                 inputDate.getText(), inputTelefon.getText());
             data.add(newPerson);
             db.addContact(newPerson);
             inputLastname.clear();
@@ -95,6 +94,7 @@ public class ViewController implements Initializable {
             inputLakcim.clear();
             inputTajszam.clear();
             inputDate.clear();
+            inputTelefon.clear();
         } else {
             alert("Adj meg egy valódi e-mail címet!");
         }
@@ -114,7 +114,7 @@ public class ViewController implements Initializable {
 
     public void setTableData() {
         TableColumn lastNameCol = new TableColumn("Vezetéknév");
-        lastNameCol.setMinWidth(130);
+        lastNameCol.setMinWidth(120);
         lastNameCol.setCellFactory(TextFieldTableCell.forTableColumn());
         lastNameCol.setCellValueFactory(new PropertyValueFactory<Person, String>("lastName"));
 
@@ -228,6 +228,23 @@ public class ViewController implements Initializable {
         );
         
         
+        TableColumn telCol = new TableColumn("Telefon");
+        telCol.setMinWidth(100);
+        telCol.setCellValueFactory(new PropertyValueFactory<Person, String>("telefon"));
+        telCol.setCellFactory(TextFieldTableCell.forTableColumn());
+
+        telCol.setOnEditCommit(
+                new EventHandler<TableColumn.CellEditEvent<Person, String>>() {
+            @Override
+            public void handle(TableColumn.CellEditEvent<Person, String> t) {
+                Person actualPerson = (Person) t.getTableView().getItems().get(t.getTablePosition().getRow());
+                actualPerson.setTelefon(t.getNewValue());
+                db.updateContact(actualPerson);
+            }
+        }
+        );
+        
+        
 
         TableColumn removeCol = new TableColumn("Törlés");
         emailCol.setMinWidth(100);
@@ -263,7 +280,7 @@ public class ViewController implements Initializable {
 
         removeCol.setCellFactory(cellFactory);
 
-        table.getColumns().addAll(lastNameCol, firstNameCol, emailCol, anyjaneveNeveCol, lakcimCol, tajszamCol, szidoCol, removeCol);
+        table.getColumns().addAll(lastNameCol, firstNameCol, emailCol, anyjaneveNeveCol, lakcimCol, tajszamCol, szidoCol, telCol, removeCol);
 
         data.addAll(db.getAllContacts());
 
