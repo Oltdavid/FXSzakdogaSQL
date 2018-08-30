@@ -48,23 +48,23 @@
                             <columns>
                           </columns>
                         </TableView>
-                        <TextField id="inputLastname" fx:id="inputLastname" layoutX="114.0" layoutY="292.0" prefHeight="25.0" prefWidth="175.0" promptText="Kovács" />
-                        <TextField id="inputFirstName" fx:id="inputFirstName" layoutX="400.0" layoutY="295.0" prefHeight="25.0" prefWidth="175.0" promptText="Gyula" />
-                        <TextField id="inputAnyjaneve" fx:id="inputAnyjaneve" layoutX="114.0" layoutY="328.0" prefHeight="25.0" prefWidth="175.0" promptText="Anyja neve" />
-                        <TextField id="inputLakcim" fx:id="inputLakcim" layoutX="400.0" layoutY="331.0" prefHeight="25.0" prefWidth="175.0" promptText="Lakcím" />
-                        <TextField id="inputTajszam" fx:id="inputTajszam" layoutX="114.0" layoutY="362.0" prefHeight="25.0" prefWidth="175.0" promptText="Taj szám" />
-                        <TextField id="inputEmail" fx:id="inputEmail" layoutX="400.0" layoutY="365.0" prefHeight="25.0" prefWidth="175.0" promptText="test@gmail.com" />
-                        <TextField id="inputDate" fx:id="inputDate" layoutX="114.0" layoutY="396.0" prefHeight="25.0" prefWidth="175.0" promptText="1983-02-12" />
-                        <TextField id="inputTelefon" fx:id="inputTelefon" layoutX="400.0" layoutY="398.0" prefHeight="25.0" prefWidth="175.0" promptText="06()???-??-??" />
-                        <Label alignment="CENTER_RIGHT" layoutX="20.0" layoutY="299.0" prefHeight="17.0" prefWidth="72.0" text="Vezetéknév:" />
-                        <Label alignment="CENTER_RIGHT" layoutX="320.0" layoutY="300.0" prefHeight="17.0" prefWidth="72.0" text="Keresztnév:" />
-                        <Label alignment="CENTER_RIGHT" layoutX="320.0" layoutY="370.0" prefHeight="17.0" prefWidth="72.0" text="Email:" />
-                        <Label alignment="CENTER_RIGHT" layoutX="20.0" layoutY="334.0" prefHeight="17.0" prefWidth="72.0" text="Anyja neve:" />
-                        <Label alignment="CENTER_RIGHT" layoutX="320.0" layoutY="335.0" prefHeight="17.0" prefWidth="72.0" text="Lakcím:" />
-                        <Label alignment="CENTER_RIGHT" layoutX="20.0" layoutY="368.0" prefHeight="0.0" prefWidth="72.0" text="Taj szám:" />
-                        <Label layoutX="27.0" layoutY="404.0" text="Születési idő:" />
-                        <Label layoutX="351.0" layoutY="404.0" text="Telefon:" />
-                        <Button id="addNewContactButton" fx:id="addNewContactButton" layoutX="448.0" layoutY="538.0" mnemonicParsing="false" onAction="#addContact" text="Új kontakt hozzáadása" />
+                        <TextField id="inputLastname" fx:id="inputLastname" layoutX="112.0" layoutY="320.0" prefHeight="25.0" prefWidth="175.0" promptText="Kovács" />
+                        <TextField id="inputFirstName" fx:id="inputFirstName" layoutX="398.0" layoutY="323.0" prefHeight="25.0" prefWidth="175.0" promptText="Gyula" />
+                        <TextField id="inputAnyjaneve" fx:id="inputAnyjaneve" layoutX="112.0" layoutY="356.0" prefHeight="25.0" prefWidth="175.0" promptText="Anyja neve" />
+                        <TextField id="inputLakcim" fx:id="inputLakcim" layoutX="398.0" layoutY="359.0" prefHeight="25.0" prefWidth="175.0" promptText="Lakcím" />
+                        <TextField id="inputTajszam" fx:id="inputTajszam" layoutX="112.0" layoutY="390.0" prefHeight="25.0" prefWidth="175.0" promptText="Taj szám" />
+                        <TextField id="inputEmail" fx:id="inputEmail" layoutX="398.0" layoutY="393.0" prefHeight="25.0" prefWidth="175.0" promptText="test@gmail.com" />
+                        <TextField id="inputDate" fx:id="inputDate" layoutX="112.0" layoutY="424.0" prefHeight="25.0" prefWidth="175.0" promptText="1983-02-12" />
+                        <TextField id="inputTelefon" fx:id="inputTelefon" layoutX="398.0" layoutY="426.0" prefHeight="25.0" prefWidth="175.0" promptText="06()???-??-??" />
+                        <Label alignment="CENTER_RIGHT" layoutX="18.0" layoutY="327.0" prefHeight="17.0" prefWidth="72.0" text="Vezetéknév:" />
+                        <Label alignment="CENTER_RIGHT" layoutX="318.0" layoutY="328.0" prefHeight="17.0" prefWidth="72.0" text="Keresztnév:" />
+                        <Label alignment="CENTER_RIGHT" layoutX="318.0" layoutY="398.0" prefHeight="17.0" prefWidth="72.0" text="Email:" />
+                        <Label alignment="CENTER_RIGHT" layoutX="18.0" layoutY="362.0" prefHeight="17.0" prefWidth="72.0" text="Anyja neve:" />
+                        <Label alignment="CENTER_RIGHT" layoutX="318.0" layoutY="363.0" prefHeight="17.0" prefWidth="72.0" text="Lakcím:" />
+                        <Label alignment="CENTER_RIGHT" layoutX="18.0" layoutY="396.0" prefHeight="0.0" prefWidth="72.0" text="Taj szám:" />
+                        <Label layoutX="25.0" layoutY="432.0" text="Születési idő:" />
+                        <Label layoutX="349.0" layoutY="432.0" text="Telefon:" />
+                        <Button id="addNewContactButton" fx:id="addNewContactButton" layoutX="272.0" layoutY="502.0" mnemonicParsing="false" onAction="#addContact" text="Sportoló rögzítése" />
                          
                      </children>
                   </Pane>

@@ -31,13 +31,13 @@ public class PdfGeneration {
             document.add(new Paragraph("\n\n\n\n\n\n\n\n\n\n\n\n\n"));
 
             //Táblázat
-            float[] columnWidths = {2, 4, 4, 6};
+            float[] columnWidths = {2, 4, 4, 4, 4, 4, 4, 4, 4};
             PdfPTable table = new PdfPTable(columnWidths);
-            table.setWidthPercentage(100);
+            table.setWidthPercentage(80);
             PdfPCell cell = new PdfPCell(new Phrase("KontaktLista"));
             cell.setBackgroundColor(GrayColor.GRAYWHITE);
             cell.setHorizontalAlignment(Element.ALIGN_CENTER);
-            cell.setColspan(4);
+            cell.setColspan(9);
             table.addCell(cell);
             
             table.getDefaultCell().setBackgroundColor(new GrayColor(0.75f));
@@ -45,10 +45,12 @@ public class PdfGeneration {
             table.addCell("Sorszám");
             table.addCell("Vezetéknév");
             table.addCell("Keresztnév");
+            table.addCell("E-mail cím");
             table.addCell("Anyja neve");
             table.addCell("Lakcím");
             table.addCell("TAJ");
-            table.addCell("E-mail cím");
+            table.addCell("Születési idő");
+            table.addCell("Telefon");
             table.setHeaderRows(1);
             
             table.getDefaultCell().setBackgroundColor(GrayColor.GRAYWHITE);
@@ -60,11 +62,12 @@ public class PdfGeneration {
                 table.addCell(""+i);
                 table.addCell(actualPerson.getLastName());
                 table.addCell(actualPerson.getFirstName());
+                table.addCell(actualPerson.getEmail());
                 table.addCell(actualPerson.getAnyjaNeve());
                 table.addCell(actualPerson.getLakcim());
                 table.addCell(actualPerson.getTajszam());
-                table.addCell(actualPerson.getEmail());
-                table.addCell(actualPerson.getEmail());
+                table.addCell(actualPerson.getSzido());
+                table.addCell(actualPerson.getTelefon());                
             }
             
             document.add(table);
