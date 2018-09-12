@@ -31,7 +31,7 @@ public class DB {
 			System.out.println("" + ex);
 		}
 
-		// Ha életre kelt, csinálunk egy megpakolható teherautót
+		// Ha életre kelt, csinálunk egy megpakolható teherautót..
 		if (conn != null) {
 			try {
 				createStatement = conn.createStatement();
