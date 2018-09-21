@@ -31,10 +31,10 @@ public class PdfGeneration {
             document.add(new Paragraph("\n\n\n\n\n\n\n\n\n\n\n\n\n"));
 
             //Táblázat
-            float[] columnWidths = {2, 4, 4, 4, 4, 4, 4, 4, 4};
+            float[] columnWidths = {1, 4, 4, 4, 4, 4, 4, 4, 4};
             PdfPTable table = new PdfPTable(columnWidths);
             table.setWidthPercentage(80);
-            PdfPCell cell = new PdfPCell(new Phrase("KontaktLista"));
+            PdfPCell cell = new PdfPCell(new Phrase("Sportolók"));
             cell.setBackgroundColor(GrayColor.GRAYWHITE);
             cell.setHorizontalAlignment(Element.ALIGN_CENTER);
             cell.setColspan(9);
@@ -74,7 +74,7 @@ public class PdfGeneration {
            
  
             //Aláírás
-            Chunk signature = new Chunk("\n\n Generálva a Telefonkönyv alkalmazás segítségével.");
+            Chunk signature = new Chunk("\n\n Ökölvívó Szakosztály");
             Paragraph base = new Paragraph(signature);
             document.add(base);
 
