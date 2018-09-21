@@ -31,7 +31,7 @@ public class PdfGeneration {
             document.add(new Paragraph("\n\n\n\n\n\n\n\n\n\n\n\n\n"));
 
             //Táblázat
-            float[] columnWidths = {1, 4, 4, 4, 4, 4, 4, 4, 4};
+            float[] columnWidths = { 4, 4, 4, 4, 4, 4, 4, 4};
             PdfPTable table = new PdfPTable(columnWidths);
             table.setWidthPercentage(80);
             PdfPCell cell = new PdfPCell(new Phrase("Sportolók"));
@@ -42,7 +42,7 @@ public class PdfGeneration {
             
             table.getDefaultCell().setBackgroundColor(new GrayColor(0.75f));
             table.getDefaultCell().setHorizontalAlignment(Element.ALIGN_CENTER);
-            table.addCell("Sorszám");
+            //table.addCell("Szám");
             table.addCell("Vezetéknév");
             table.addCell("Keresztnév");
             table.addCell("E-mail cím");
@@ -59,7 +59,7 @@ public class PdfGeneration {
             for (int i = 1; i <= data.size(); i++) {
                 Person actualPerson = data.get(i - 1);
                 
-                table.addCell(""+i);
+                //table.addCell(""+i);
                 table.addCell(actualPerson.getLastName());
                 table.addCell(actualPerson.getFirstName());
                 table.addCell(actualPerson.getEmail());
