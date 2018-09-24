@@ -2,6 +2,7 @@ package phonebook;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -82,9 +83,9 @@ public class ViewController implements Initializable {
         String email = inputEmail.getText();
         if (email.length() > 3 && email.contains("@") && email.contains(".")) {
             Person newPerson = new Person(inputLastname.getText(), inputFirstName.getText(),
-                                 inputEmail.getText(), inputAnyjaneve.getText(),
-                                 inputLakcim.getText(),inputTajszam.getText(),
-                                 inputDate.getText(), inputTelefon.getText());
+                    inputEmail.getText(), inputAnyjaneve.getText(),
+                    inputLakcim.getText(), inputTajszam.getText(),
+                    inputDate.getText(), inputTelefon.getText());
             data.add(newPerson);
             db.addContact(newPerson);
             inputLastname.clear();
@@ -196,7 +197,7 @@ public class ViewController implements Initializable {
         );
 
         TableColumn tajszamCol = new TableColumn("Taj szám");
-        tajszamCol.setMinWidth(100);
+        tajszamCol.setMinWidth(80);
         tajszamCol.setCellValueFactory(new PropertyValueFactory<Person, String>("tajszam"));
         tajszamCol.setCellFactory(TextFieldTableCell.forTableColumn());
 
@@ -210,9 +211,9 @@ public class ViewController implements Initializable {
             }
         }
         );
-        
-         TableColumn szidoCol = new TableColumn("Születési idő");
-        szidoCol.setMinWidth(100);
+
+        TableColumn szidoCol = new TableColumn("Születési idő");
+        szidoCol.setMinWidth(80);
         szidoCol.setCellValueFactory(new PropertyValueFactory<Person, String>("szido"));
         szidoCol.setCellFactory(TextFieldTableCell.forTableColumn());
 
@@ -226,8 +227,7 @@ public class ViewController implements Initializable {
             }
         }
         );
-        
-        
+
         TableColumn telCol = new TableColumn("Telefon");
         telCol.setMinWidth(100);
         telCol.setCellValueFactory(new PropertyValueFactory<Person, String>("telefon"));
@@ -243,11 +243,9 @@ public class ViewController implements Initializable {
             }
         }
         );
-        
-        
 
         TableColumn removeCol = new TableColumn("Törlés");
-        emailCol.setMinWidth(100);
+        removeCol.setMinWidth(70);
 
         Callback<TableColumn<Person, String>, TableCell<Person, String>> cellFactory
                 = new Callback<TableColumn<Person, String>, TableCell<Person, String>>() {
@@ -278,9 +276,48 @@ public class ViewController implements Initializable {
             }
         };
 
+        TableColumn editCol = new TableColumn("Szerkeszt");
+        editCol.setMinWidth(70);
+
+        Callback<TableColumn<Person, String>, TableCell<Person, String>> Torol
+                = new Callback<TableColumn<Person, String>, TableCell<Person, String>>() {
+            @Override
+            public TableCell call(final TableColumn<Person, String> param) {
+                final TableCell<Person, String> cell = new TableCell<Person, String>() {
+                    final Button btn = new Button("Szerkeszt");
+
+                    @Override
+                    public void updateItem(String item, boolean empty) {
+                        super.updateItem(item, empty);
+                        if (empty) {
+                            setGraphic(null);
+                            setText(null);
+                        } else {
+                            btn.setOnAction((ActionEvent event)
+                                    -> {
+                                Person person = getTableView().getItems().get(getIndex());
+                                inputAnyjaneve.setText(person.getAnyjaNeve());
+                                inputDate.setText(person.getSzido());
+                                inputEmail.setText(person.getEmail());
+                                inputFirstName.setText(person.getFirstName());
+                                inputLastname.setText(person.getLastName());
+                                inputLakcim.setText(person.getLakcim());
+                                inputTajszam.setText(person.getTajszam());
+                                inputTelefon.setText(person.getTelefon());
+                            });
+                            setGraphic(btn);
+                            setText(null);
+                        }
+                    }
+                };
+                return cell;
+            }
+        };
+
+        editCol.setCellFactory(Torol);
         removeCol.setCellFactory(cellFactory);
 
-        table.getColumns().addAll(lastNameCol, firstNameCol, emailCol, anyjaneveNeveCol, lakcimCol, tajszamCol, szidoCol, telCol, removeCol);
+        table.getColumns().addAll(lastNameCol, firstNameCol, emailCol, anyjaneveNeveCol, lakcimCol, tajszamCol, szidoCol, telCol, editCol, removeCol);
 
         data.addAll(db.getAllContacts());
 
