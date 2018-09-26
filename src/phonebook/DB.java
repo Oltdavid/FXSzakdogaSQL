@@ -11,8 +11,12 @@ import java.util.ArrayList;
 
 public class DB {
 
-	final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-	final String URL = "jdbc:mysql://localhost/telefonkonyv?&characterEncoding=UTF-8";
+//	final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
+//	final String URL = "jdbc:mysql://localhost/telefonkonyv?&characterEncoding=UTF-8";
+//	final String USERNAME = "root";
+//	final String PASSWORD = "";
+    final String JDBC_DRIVER = "org.sqlite.JDBC";
+	final String URL = "jdbc:sqlite:contacts.sqlite";
 	final String USERNAME = "root";
 	final String PASSWORD = "";
 
@@ -52,13 +56,7 @@ public class DB {
 		try {
 			ResultSet rs = dbmd.getTables(null, null, "%", null);
 			if (!rs.next()) {
-				String database_sql = "CREATE TABLE contacts ("
-						+ " `id` INT NOT NULL AUTO_INCREMENT , `lastname` VARCHAR(30) NOT NULL ,"
-						+ " `firstname` VARCHAR(30) NOT NULL ," + " `email` VARCHAR(20) NOT NULL ,"
-						+ " `anyjaneve` VARCHAR(30) NOT NULL ," + " `lakcim` VARCHAR(30) NOT NULL ,"
-						+ " `tajszam` VARCHAR(10) NOT NULL ," + " `szido` VARCHAR(10) NOT NULL ," 
-                                                + " `telefon` VARCHAR(15) NOT NULL ," + " PRIMARY KEY (`id`)"
-						+ ") ENGINE = InnoDB CHARSET=utf8 COLLATE utf8_hungarian_ci;";
+				String database_sql = "CREATE TABLE `contacts` ( `id` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, `lastname` TEXT NOT NULL, `firstname` TEXT NOT NULL, `email` TEXT NOT NULL, `anyjaneve` TEXT NOT NULL, `lakcim` TEXT NOT NULL, `tajszam` TEXT NOT NULL, `szido` TEXT NOT NULL, `telefon` TEXT NOT NULL )";
 
 				createStatement.execute(database_sql);
 
