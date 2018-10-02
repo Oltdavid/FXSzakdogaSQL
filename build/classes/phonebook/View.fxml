@@ -65,7 +65,8 @@
                         <Label layoutX="25.0" layoutY="432.0" text="Születési idő:" />
                         <Label layoutX="349.0" layoutY="432.0" text="Telefon:" />
                         <Button id="addNewContactButton" fx:id="addNewContactButton" layoutX="272.0" layoutY="502.0" mnemonicParsing="false" onAction="#addContact" text="Sportoló rögzítése" />
-                        <Button id="EditContactButton" fx:id="EditContactButton" layoutX="424.0" layoutY="502.0" mnemonicParsing="false" onAction="#addContact" text="Változtatás mentése" />
+                        <Button id="EditContactButton" fx:id="EditContactButton" layoutX="424.0" layoutY="502.0" mnemonicParsing="false" onAction="#updateContact" text="Változtatás mentése" />
+                        <TextField fx:id="inputID" editable="false" layoutX="5.0" layoutY="297.0" prefHeight="6.0" prefWidth="27.0" visible="false" />
                          
                      </children>
                   </Pane>

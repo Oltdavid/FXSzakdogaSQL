@@ -37,6 +37,8 @@ public class ViewController implements Initializable {
     @FXML
     TableView table;
     @FXML
+    TextField inputID;
+    @FXML
     TextField inputLastname;
     @FXML
     TextField inputFirstName;
@@ -76,7 +78,8 @@ public class ViewController implements Initializable {
     private final String MENU_EXPORT = "Exportálás";
     private final String MENU_EXIT = "Kilépés";
 
-    private final ObservableList<Person> data = FXCollections.observableArrayList();
+    private ObservableList<Person> data = FXCollections.observableArrayList(db.getAllContacts());
+    
 
     @FXML
     private void addContact(ActionEvent event) {
@@ -86,8 +89,33 @@ public class ViewController implements Initializable {
                     inputEmail.getText(), inputAnyjaneve.getText(),
                     inputLakcim.getText(), inputTajszam.getText(),
                     inputDate.getText(), inputTelefon.getText());
-            data.add(newPerson);
+
             db.addContact(newPerson);
+            tableReferesh();
+            inputLastname.clear();
+            inputFirstName.clear();
+            inputEmail.clear();
+            inputAnyjaneve.clear();
+            inputLakcim.clear();
+            inputTajszam.clear();
+            inputDate.clear();
+            inputTelefon.clear();
+        } else {
+            alert("Adj meg egy valódi e-mail címet!");
+        }
+    }
+    
+    @FXML
+    private void updateContact(ActionEvent event) {
+        String email = inputEmail.getText();
+        if (email.length() > 3 && email.contains("@") && email.contains(".")) {
+            Person editPerson = new Person(Integer.parseInt(inputID.getText()),inputLastname.getText(), inputFirstName.getText(),
+                    inputEmail.getText(), inputAnyjaneve.getText(),
+                    inputLakcim.getText(), inputTajszam.getText(),
+                    inputDate.getText(), inputTelefon.getText());
+
+            db.updateContact(editPerson);
+            tableReferesh();
             inputLastname.clear();
             inputFirstName.clear();
             inputEmail.clear();
@@ -264,8 +292,8 @@ public class ViewController implements Initializable {
                             btn.setOnAction((ActionEvent event)
                                     -> {
                                 Person person = getTableView().getItems().get(getIndex());
-                                data.remove(person);
                                 db.removeContact(person);
+                                tableReferesh();
                             });
                             setGraphic(btn);
                             setText(null);
@@ -304,6 +332,7 @@ public class ViewController implements Initializable {
                                 inputLakcim.setText(person.getLakcim());
                                 inputTajszam.setText(person.getTajszam());
                                 inputTelefon.setText(person.getTelefon());
+                                inputID.setText(person.getId());
                             });
                             setGraphic(btn);
                             setText(null);
@@ -318,9 +347,6 @@ public class ViewController implements Initializable {
         removeCol.setCellFactory(cellFactory);
 
         table.getColumns().addAll(lastNameCol, firstNameCol, emailCol, anyjaneveNeveCol, lakcimCol, tajszamCol, szidoCol, telCol, editCol, removeCol);
-
-        data.addAll(db.getAllContacts());
-
         table.setItems(data);
     }
 
@@ -374,6 +400,12 @@ public class ViewController implements Initializable {
 
     }
 
+    private void tableReferesh() {
+        table.getColumns().clear();
+        data = FXCollections.observableArrayList(db.getAllContacts());
+        setTableData();
+    }
+    
     private void alert(String text) {
         mainSplit.setDisable(true);
         mainSplit.setOpacity(0.4);

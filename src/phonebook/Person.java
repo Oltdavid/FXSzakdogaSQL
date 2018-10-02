@@ -115,5 +115,10 @@ public class Person {
     public void setId(String fId){
         id.set(fId);
     }
-    
+
+    @Override
+    public String toString() {
+        return "Person{" + "firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + ", anyjaNeve=" + anyjaNeve + ", lakcim=" + lakcim + ", tajszam=" + tajszam + ", szido=" + szido + ", telefon=" + telefon + ", id=" + id + '}';
+    }
+  
 }
