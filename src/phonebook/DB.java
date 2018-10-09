@@ -108,7 +108,7 @@ public class DB {
 
 	public void updateContact(Person person) {
 		try {
-			String sql = "update contacts set lastname = ?, firstname = ? , email = ?, lakcim = ? ,anyjaneve = ?, tajszam = ?, szido = ?, telefon = ? where id = ?";
+			String sql = "update contacts set lastname = ?, firstname = ? , email = ?, anyjaneve = ?, lakcim = ? , tajszam = ?, szido = ?, telefon = ? where id = ?";
 			PreparedStatement preparedStatement = conn.prepareStatement(sql);
 			preparedStatement.setString(1, person.getLastName());
 			preparedStatement.setString(2, person.getFirstName());
