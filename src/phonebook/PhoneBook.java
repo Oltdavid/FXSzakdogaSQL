@@ -22,7 +22,7 @@ public class PhoneBook extends Application {
         stage.show();
     }
 
-//commit proba
+//anyja neve és a lakcím össze van keverve
     public static void main(String[] args) {
         launch(args);
     }
