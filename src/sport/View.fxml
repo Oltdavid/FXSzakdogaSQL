@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -20,13 +21,20 @@
             <items>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="616.0" prefWidth="251.0">
                     <children>
-                        <StackPane id="menuPane" fx:id="menuPane" layoutX="14.0" layoutY="48.0" prefHeight="616.0" prefWidth="297.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <StackPane id="menuPane" fx:id="menuPane" layoutX="14.0" layoutY="48.0" prefHeight="616.0" prefWidth="297.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../logo.jpg" />
+                           </image>
+                        </ImageView>
+                     </children></StackPane>
                     </children>
                 </AnchorPane>
          
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <Pane id="exportPane" fx:id="exportPane" layoutX="49.0" layoutY="35.0" prefHeight="610.0" prefWidth="445.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <Pane id="exportPane" fx:id="exportPane" layoutX="49.0" layoutY="35.0" prefHeight="610.0" prefWidth="445.0" style="-fx-background-color: #e0e0e0;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
                         <Button id="exportButton" fx:id="exportButton" layoutX="180.0" layoutY="192.0" mnemonicParsing="false" onAction="#exportList" text="PDF mentése" />
                         <TextField id="inputExportName" fx:id="inputExportName" layoutX="93.0" layoutY="155.0" prefHeight="25.0" prefWidth="259.0" />
@@ -52,25 +60,30 @@
                             <columns>
                           </columns>
                         </TableView>
-                        <TextField id="inputLastname" fx:id="inputLastname" layoutX="241.0" layoutY="322.0" prefHeight="25.0" prefWidth="175.0" promptText="Kovács" />
-                        <TextField id="inputFirstName" fx:id="inputFirstName" layoutX="527.0" layoutY="325.0" prefHeight="25.0" prefWidth="175.0" promptText="Gyula" />
-                        <TextField id="inputAnyjaneve" fx:id="inputAnyjaneve" layoutX="241.0" layoutY="358.0" prefHeight="25.0" prefWidth="175.0" promptText="Anyja neve" />
-                        <TextField id="inputLakcim" fx:id="inputLakcim" layoutX="527.0" layoutY="361.0" prefHeight="25.0" prefWidth="175.0" promptText="Lakcím" />
-                        <TextField id="inputTajszam" fx:id="inputTajszam" layoutX="241.0" layoutY="392.0" prefHeight="25.0" prefWidth="175.0" promptText="Taj szám" />
-                        <TextField id="inputEmail" fx:id="inputEmail" layoutX="527.0" layoutY="395.0" prefHeight="25.0" prefWidth="175.0" promptText="test@gmail.com" />
-                        <TextField id="inputDate" fx:id="inputDate" layoutX="241.0" layoutY="426.0" prefHeight="25.0" prefWidth="175.0" promptText="1983-02-12" />
-                        <TextField id="inputTelefon" fx:id="inputTelefon" layoutX="527.0" layoutY="428.0" prefHeight="25.0" prefWidth="175.0" promptText="06()???-??-??" />
-                        <Label alignment="CENTER_RIGHT" layoutX="147.0" layoutY="329.0" prefHeight="17.0" prefWidth="72.0" text="Vezetéknév:" />
-                        <Label alignment="CENTER_RIGHT" layoutX="447.0" layoutY="330.0" prefHeight="17.0" prefWidth="72.0" text="Keresztnév:" />
-                        <Label alignment="CENTER_RIGHT" layoutX="447.0" layoutY="400.0" prefHeight="17.0" prefWidth="72.0" text="Email:" />
-                        <Label alignment="CENTER_RIGHT" layoutX="147.0" layoutY="364.0" prefHeight="17.0" prefWidth="72.0" text="Anyja neve:" />
-                        <Label alignment="CENTER_RIGHT" layoutX="447.0" layoutY="365.0" prefHeight="17.0" prefWidth="72.0" text="Lakcím:" />
-                        <Label alignment="CENTER_RIGHT" layoutX="147.0" layoutY="398.0" prefHeight="0.0" prefWidth="72.0" text="Taj szám:" />
-                        <Label layoutX="154.0" layoutY="434.0" text="Születési idő:" />
-                        <Label layoutX="478.0" layoutY="434.0" text="Telefon:" />
-                        <Button id="addNewContactButton" fx:id="addNewContactButton" layoutX="241.0" layoutY="502.0" mnemonicParsing="false" onAction="#addContact" text="Sportoló rögzítése" />
-                        <Button id="EditContactButton" fx:id="EditContactButton" layoutX="527.0" layoutY="502.0" mnemonicParsing="false" onAction="#updateContact" text="Változtatás mentése" />
-                        <TextField fx:id="inputID" editable="false" layoutX="5.0" layoutY="297.0" prefHeight="6.0" prefWidth="27.0" visible="false" />
+                        <TextField id="inputLastname" fx:id="inputLastname" layoutX="132.0" layoutY="358.0" prefHeight="25.0" prefWidth="175.0" promptText="Kovács" />
+                        <TextField id="inputFirstName" fx:id="inputFirstName" layoutX="418.0" layoutY="361.0" prefHeight="25.0" prefWidth="175.0" promptText="Gyula" />
+                        <TextField id="inputAnyjaneve" fx:id="inputAnyjaneve" layoutX="132.0" layoutY="394.0" prefHeight="25.0" prefWidth="175.0" promptText="Anyja neve" />
+                        <TextField id="inputLakcim" fx:id="inputLakcim" layoutX="418.0" layoutY="397.0" prefHeight="25.0" prefWidth="175.0" promptText="Lakcím" />
+                        <TextField id="inputTajszam" fx:id="inputTajszam" layoutX="132.0" layoutY="428.0" prefHeight="25.0" prefWidth="175.0" promptText="Taj szám" />
+                        <TextField id="inputEmail" fx:id="inputEmail" layoutX="418.0" layoutY="431.0" prefHeight="25.0" prefWidth="175.0" promptText="test@gmail.com" />
+                        <TextField id="inputDate" fx:id="inputDate" layoutX="132.0" layoutY="462.0" prefHeight="25.0" prefWidth="175.0" promptText="1983-02-12" />
+                        <TextField id="inputTelefon" fx:id="inputTelefon" layoutX="418.0" layoutY="464.0" prefHeight="25.0" prefWidth="175.0" promptText="06()???-??-??" />
+                        <Label alignment="CENTER_RIGHT" layoutX="38.0" layoutY="365.0" prefHeight="17.0" prefWidth="72.0" text="Vezetéknév:" />
+                        <Label alignment="CENTER_RIGHT" layoutX="338.0" layoutY="366.0" prefHeight="17.0" prefWidth="72.0" text="Keresztnév:" />
+                        <Label alignment="CENTER_RIGHT" layoutX="338.0" layoutY="436.0" prefHeight="17.0" prefWidth="72.0" text="Email:" />
+                        <Label alignment="CENTER_RIGHT" layoutX="38.0" layoutY="400.0" prefHeight="17.0" prefWidth="72.0" text="Anyja neve:" />
+                        <Label alignment="CENTER_RIGHT" layoutX="338.0" layoutY="401.0" prefHeight="17.0" prefWidth="72.0" text="Lakcím:" />
+                        <Label alignment="CENTER_RIGHT" layoutX="38.0" layoutY="434.0" prefHeight="0.0" prefWidth="72.0" text="Taj szám:" />
+                        <Label layoutX="45.0" layoutY="470.0" text="Születési idő:" />
+                        <Label layoutX="369.0" layoutY="470.0" text="Telefon:" />
+                        <Button id="addNewContactButton" fx:id="addNewContactButton" layoutX="141.0" layoutY="526.0" mnemonicParsing="false" onAction="#addContact" text="Új sportoló rögzítése" />
+                        <Button id="EditContactButton" fx:id="EditContactButton" layoutX="427.0" layoutY="526.0" mnemonicParsing="false" onAction="#updateContact" text="Változtatás mentése" />
+                        <TextField fx:id="inputID" editable="false" layoutX="2.0" layoutY="345.0" prefHeight="6.0" prefWidth="27.0" visible="false" />
+                        <ImageView fitHeight="277.0" fitWidth="336.0" layoutX="639.0" layoutY="293.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../logó2.jpg" />
+                           </image>
+                        </ImageView>
                          
                      </children>
                   </Pane>
