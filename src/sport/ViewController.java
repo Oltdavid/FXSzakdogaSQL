@@ -1,4 +1,4 @@
-package phonebook;
+package sport;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -73,9 +73,9 @@ public class ViewController implements Initializable {
 
     DB db = new DB();
 
-    private final String MENU_CONTACTS = "Kontaktok";
+    private final String MENU_CONTACTS = "Sportolók";
     private final String MENU_LIST = "Lista";
-    private final String MENU_EXPORT = "Exportálás";
+    private final String MENU_EXPORT = "Mentés pdf-be";
     private final String MENU_EXIT = "Kilépés";
 
     private ObservableList<Person> data = FXCollections.observableArrayList(db.getAllContacts());

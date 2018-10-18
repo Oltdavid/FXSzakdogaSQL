@@ -1,4 +1,4 @@
-package phonebook;
+package sport;
 
 import com.itextpdf.text.Chunk;
 import com.itextpdf.text.Document;
@@ -26,20 +26,20 @@ public class PdfGeneration {
             image1.scaleToFit(400, 172);
             image1.setAbsolutePosition(170f, 650f);
             document.add(image1);
-            
+
             //Sortörések
             document.add(new Paragraph("\n\n\n\n\n\n\n\n\n\n\n\n\n"));
 
             //Táblázat
-            float[] columnWidths = { 4, 4, 4, 4, 4, 4, 4, 4};
+            float[] columnWidths = {4, 4, 4, 4, 4, 4, 4, 4};
             PdfPTable table = new PdfPTable(columnWidths);
-            table.setWidthPercentage(80);
+            table.setWidthPercentage(100);
             PdfPCell cell = new PdfPCell(new Phrase("Sportolók"));
             cell.setBackgroundColor(GrayColor.GRAYWHITE);
             cell.setHorizontalAlignment(Element.ALIGN_CENTER);
             cell.setColspan(9);
             table.addCell(cell);
-            
+
             table.getDefaultCell().setBackgroundColor(new GrayColor(0.75f));
             table.getDefaultCell().setHorizontalAlignment(Element.ALIGN_CENTER);
             //table.addCell("Szám");
@@ -52,13 +52,13 @@ public class PdfGeneration {
             table.addCell("Születési idő");
             table.addCell("Telefon");
             table.setHeaderRows(1);
-            
+
             table.getDefaultCell().setBackgroundColor(GrayColor.GRAYWHITE);
             table.getDefaultCell().setHorizontalAlignment(Element.ALIGN_CENTER);
-            
+
             for (int i = 1; i <= data.size(); i++) {
                 Person actualPerson = data.get(i - 1);
-                
+
                 //table.addCell(""+i);
                 table.addCell(actualPerson.getLastName());
                 table.addCell(actualPerson.getFirstName());
@@ -67,22 +67,15 @@ public class PdfGeneration {
                 table.addCell(actualPerson.getLakcim());
                 table.addCell(actualPerson.getTajszam());
                 table.addCell(actualPerson.getSzido());
-                table.addCell(actualPerson.getTelefon());                
+                table.addCell(actualPerson.getTelefon());
             }
-            
+
             document.add(table);
-           
- 
-            //Aláírás
-            Chunk signature = new Chunk("\n\n Ökölvívó Szakosztály");
-            Paragraph base = new Paragraph(signature);
-            document.add(base);
 
         } catch (Exception e) {
             e.printStackTrace();
         }
         document.close();
     }
-
 
 }

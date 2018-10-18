@@ -43,7 +43,7 @@
                      </children></Pane>
                   <Pane id="contactPane" fx:id="contactPane" layoutY="45.0" prefHeight="616.0" prefWidth="895.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <TableView id="table" fx:id="table" editable="true" layoutX="-5.0" layoutY="1.0" prefHeight="293.0" prefWidth="1082.0">
+                        <TableView id="table" fx:id="table" editable="true" layoutX="2.0" layoutY="1.0" prefHeight="293.0" prefWidth="1075.0">
                           <placeholder>
                             <Label text="Nincs adat." />
                           </placeholder>
