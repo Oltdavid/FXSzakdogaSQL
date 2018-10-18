@@ -361,7 +361,7 @@ public class ViewController implements Initializable {
         nodeItemA.setExpanded(true);
 
         Node contactsNode = new ImageView(new Image(getClass().getResourceAsStream("/contacts.png")));
-        Node exportNode = new ImageView(new Image(getClass().getResourceAsStream("/export.png")));
+        Node exportNode = new ImageView(new Image(getClass().getResourceAsStream("/save.png")));
         TreeItem<String> nodeItemA1 = new TreeItem<>(MENU_LIST, contactsNode);
         TreeItem<String> nodeItemA2 = new TreeItem<>(MENU_EXPORT, exportNode);
 
